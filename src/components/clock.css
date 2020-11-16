@@ -1,0 +1,96 @@
+body {
+  background: #8b8a8a;
+}
+
+.clock-container {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background-image: linear-gradient(
+      60deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.7) 40%,
+      rgba(255, 255, 255, 0.5) 45%,
+      rgba(255, 255, 255, 0.25) 55%,
+      rgba(255, 255, 255, 0.35) 55.5%,
+      rgba(255, 255, 255, 0.3) 60%,
+      rgba(255, 255, 255, 0.2) 68%,
+      rgba(255, 255, 255, 0.1) 72%,
+      rgba(255, 255, 255, 0.25) 75%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(180, 180, 180, 1) 0%,
+      rgba(140, 140, 140, 1) 80%
+    );
+  border-radius: 50%;
+  border: 2px solid #626262;
+}
+
+.clock {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  background: transparent url(../assets/clock.svg) no-repeat center;
+  background-size: 92%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 50%;
+}
+
+.clock.simple:after {
+  z-index: 10;
+  content: "";
+  width: 5%;
+  height: 5%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #3e3d3d;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hours-container,
+.minutes-container,
+.seconds-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.hours {
+  width: 2.5%;
+  height: 20%;
+  position: absolute;
+  top: 30%;
+  left: 48.75%;
+  background: #3e3d3d;
+  transform-origin: 50% 100%;
+}
+
+.minutes {
+  width: 2%;
+  height: 40%;
+  position: absolute;
+  top: 10%;
+  left: 49%;
+  background: #3e3d3d;
+  transform-origin: 50% 100%;
+  transition: transform 0.3s cubic-bezier(0.4, 2.08, 0.55, 0.44);
+}
+
+.seconds {
+  z-index: 8;
+  width: 1%;
+  height: 45%;
+  position: absolute;
+  top: 14%;
+  left: 49.5%;
+  background: red;
+  transform-origin: 50% 80%;
+  transition: transform 0.2s cubic-bezier(0.4, 2.08, 0.55, 0.44);
+}

@@ -1,0 +1,12 @@
+.App {
+  text-align: justify;
+}
+
+#root {
+  height: 100vh;
+}
+#root::before,
+#root::after {
+  content: "";
+  display: table;
+}
